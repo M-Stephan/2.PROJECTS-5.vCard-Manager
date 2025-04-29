@@ -1,0 +1,61 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+.vs2019/
+.vs2017/
+.vs2015/
+.idea/
+
+# Github
+.git/
+
+# System Files
+*.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+
+# Test folder
+TestResults/
+
+# Backup files if exist
+*.bak
+
+# Secrets file if exist
+secrets.json
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer logs
+*.log
+
+# JetBrains Rider
+.idea/
+
+# User-specific files
+*.user
+*.suo
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]eploy/
+[Dd]ebugTest/
+[Dd]ebugger/
