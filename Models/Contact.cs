@@ -13,6 +13,6 @@ public class Contact
 
     public string ToVcf()
     {
-        return $"BEGIN:VCARD\nFN:{Name}\nTEL:{Phone}\nEMAIL:{Email}\nEND:VCARD";
+        return $"\nBEGIN:VCARD\nFN:{Name}\nTEL:{Phone}\nEMAIL:{Email}\nEND:VCARD";
     }
 }

@@ -1,4 +1,6 @@
-﻿public class Menu
+﻿using VCard;
+
+public class Menu
 {
     public static void DisplayMenu()
     {
@@ -23,10 +25,10 @@
                 switch (choice)
                 {
                     case 1:
-                        ContactManager.DisplayAllContacts();
+                        DisplayContacts.DisplayAllContacts();
                         break;
                     case 2:
-                        ContactManager.AddContact();
+                        AddContacts.AddContact();
                         break;
                     case 3:
                         ContactManager.SearchContactByName();
