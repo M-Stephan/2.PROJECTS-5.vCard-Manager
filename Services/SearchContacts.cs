@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 
 namespace VCard
@@ -9,6 +9,7 @@ namespace VCard
         {
             Console.WriteLine("Enter the name to search:");
             string inputName = Console.ReadLine();
+
             string filePath = @"C:\Users\marti\Desktop\5.vCard-Manager\contacts.vcf";
 
             if (File.Exists(filePath))
@@ -23,7 +24,6 @@ namespace VCard
                 {
                     if (line.StartsWith("BEGIN:VCARD"))
                     {
-                        // Reset les infos du contact � chaque nouveau bloc
                         name = phone = email = string.Empty;
                     }
                     else if (line.StartsWith("FN:"))
@@ -40,7 +40,6 @@ namespace VCard
                     }
                     else if (line.StartsWith("END:VCARD"))
                     {
-                        // Une fois le bloc termin�, on v�rifie si le nom correspond
                         if (name.Equals(inputName, StringComparison.OrdinalIgnoreCase))
                         {
                             Console.WriteLine("-------- Contact --------");
@@ -52,8 +51,17 @@ namespace VCard
                     }
                 }
 
-                Console.WriteLine("\nPress any key to return to the menu...");
-                Console.ReadKey();
+                Console.WriteLine("Choose an option:\n[1] ─► Export\n[2] ─► Delete\n[3] ─► Go to main menu");
+                string action = Console.ReadLine()?.ToLower();
+
+                if (action == "1")
+                {
+                    ExportContacts.ExportContactToVcf(inputName);
+                }
+                else if (action == "2")
+                {
+                    RemoveContacts.RemoveContact(inputName);
+                }
             }
             else
             {

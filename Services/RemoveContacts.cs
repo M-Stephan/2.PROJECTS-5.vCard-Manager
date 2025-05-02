@@ -6,19 +6,21 @@ namespace VCard
 {
     public static class RemoveContacts
     {
-        public static void RemoveContact()
+        public static void RemoveContact(string userInput)
         {
-            string filePath = @"C:\Users\marti\Desktop\5.vCard-Manager\contacts.vcf";
-
-            if (!File.Exists(filePath))
-
+            if (string.IsNullOrWhiteSpace(userInput))
             {
-                Console.WriteLine("SCRIPT_ERROR: The contact does not exist.");
+                Console.WriteLine("Please enter a valid contact name.");
                 return;
             }
 
-            Console.WriteLine("Please, enter the full name of the contact to remove:");
-            string userInput = Console.ReadLine()?.Trim();
+            string filePath = @"C:\Users\marti\Desktop\5.vCard-Manager\contacts.vcf";
+
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("SCRIPT_ERROR: The contact file does not exist.");
+                return;
+            }
 
             string[] lines = File.ReadAllLines(filePath);
             List<string> updatedLines = new List<string>();
@@ -45,7 +47,7 @@ namespace VCard
                     {
                         Console.WriteLine("\nContact found:");
                         foreach (string l in viewing)
-                            Console.WriteLine(l);
+                        Console.WriteLine(l);
 
                         Console.WriteLine("\nDelete this contact? (y/n)");
                         string confirm = Console.ReadLine()?.ToLower();
