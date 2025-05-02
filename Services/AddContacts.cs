@@ -25,7 +25,7 @@ namespace VCard
             try
             {
                 File.AppendAllText(filePath, $"{vCard}\n");
-                Console.WriteLine("SCRIPT_SUCCESS: Contact added!");
+                Console.WriteLine("SCRIPT_INFO: Success! Contact added!");
             }
             catch (Exception ex)
             {

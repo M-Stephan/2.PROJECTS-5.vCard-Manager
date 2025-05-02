@@ -31,10 +31,10 @@ public class Menu
                         AddContacts.AddContact();
                         break;
                     case 3:
-                        ContactManager.SearchContactByName();
+                        SearchContacts.SearchContactByName();
                         break;
                     case 4:
-                        ContactManager.RemoveContact();
+                        RemoveContacts.RemoveContact();
                         break;
                     case 5:
                         ContactManager.ExportContactToVcf();
