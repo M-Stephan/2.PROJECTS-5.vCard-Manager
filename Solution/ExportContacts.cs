@@ -1,12 +1,12 @@
-using System;
-using System.IO;
-
-namespace VCard
+namespace vCardManager
 {
     public static class ExportContacts
     {
         public static void ExportContactToVcf(string contactName)
         {
+            var normalize = new NormalizeWords();
+            contactName = normalize.CapitalizeWords(contactName);
+
             if (string.IsNullOrWhiteSpace(contactName))
             {
                 Console.WriteLine("Please enter a valid contact name.");
@@ -15,8 +15,8 @@ namespace VCard
             string currentDirectory = Directory.GetCurrentDirectory();
 
 
-            string filePath = @"C:\Users\marti\Desktop\5.vCard-Manager\contacts.vcf";
-            string exportFilePath = Path.Combine(currentDirectory, $@"C:\Users\marti\Desktop\5.vCard-Manager\{contactName}.vcf");
+            string filePath = @"../../../contacts.vcf";
+            string exportFilePath = Path.Combine(currentDirectory, $@"../../../{contactName}.vcf");
 
             if (File.Exists(filePath))
             {
