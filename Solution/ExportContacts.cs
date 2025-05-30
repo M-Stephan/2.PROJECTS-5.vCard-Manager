@@ -15,8 +15,10 @@ namespace vCardManager
             string currentDirectory = Directory.GetCurrentDirectory();
 
 
-            string filePath = @"../../../contacts.vcf";
-            string exportFilePath = Path.Combine(currentDirectory, $@"../../../{contactName}.vcf");
+            string filePath = Path.Combine(AppContext.BaseDirectory, "contacts.vcf");
+
+            string exportFilePath = Path.Combine(AppContext.BaseDirectory, $"{contactName}.vcf");
+
 
             if (File.Exists(filePath))
             {

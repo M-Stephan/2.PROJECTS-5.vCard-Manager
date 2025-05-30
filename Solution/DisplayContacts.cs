@@ -17,7 +17,8 @@ namespace vCardManager
 
         public static void DisplayAllContacts()
         {
-            string filePath = @"../../../contacts.vcf";
+            string filePath = Path.Combine(AppContext.BaseDirectory, "contacts.vcf");
+
 
             if (File.Exists(filePath))
             {
@@ -50,7 +51,7 @@ namespace vCardManager
                     }
                 }
 
-                // Tri alphabétique par nom
+                // Tri alphabï¿½tique par nom
                 var sortedContacts = contacts.OrderBy(c => c.Name).ToList();
 
                 var table = new Table()

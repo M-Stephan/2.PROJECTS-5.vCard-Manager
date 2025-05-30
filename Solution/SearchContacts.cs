@@ -17,7 +17,7 @@ namespace vCardManager
             );
 
             inputName = normalize.CapitalizeWords(inputName);
-            string filePath = @"../../../contacts.vcf";
+            string filePath = Path.Combine(AppContext.BaseDirectory, "contacts.vcf");
 
             if (File.Exists(filePath))
             {

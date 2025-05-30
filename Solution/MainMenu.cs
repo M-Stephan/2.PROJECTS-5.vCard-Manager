@@ -22,7 +22,6 @@ namespace vCardManager
                 var choice = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                         .Title("[bold aqua]What would you like to do?[/]")
-                        .PageSize(10)
                         .AddChoices(new[]
                         {
                             "Display all contacts",

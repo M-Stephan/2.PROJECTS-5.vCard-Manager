@@ -43,7 +43,9 @@ namespace vCardManager
 
             Contact newContact = new Contact(name, email, phone);
             string vCard = newContact.ToVcf();
-            string filePath = @"../../../contacts.vcf";
+            string filePath = Path.Combine(AppContext.BaseDirectory, "contacts.vcf");
+
+
 
             try
             {

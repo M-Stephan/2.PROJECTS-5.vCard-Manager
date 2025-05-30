@@ -12,4 +12,11 @@
     <PackageReference Include="Spectre.Console.Cli" Version="0.50.0" />
   </ItemGroup>
 
+<ItemGroup>
+  <None Update="contacts.vcf">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+  </None>
+</ItemGroup>
+
 </Project>
