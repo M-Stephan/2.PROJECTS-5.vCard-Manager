@@ -61,6 +61,18 @@ vcard-manager/
 
 ## ℹ️ Information
 
+🚀 The project is automatically built and deployed to [Docker Hub](https://hub.docker.com/r/ndcstudio/vcard-manager) using **GitHub Actions**.  
+This makes it easy to pull and run the app anywhere using Docker.
+
+📦 **To run the project using Docker:**
+
+```bash
+docker run -it ndcstudio/vcard-manager
+```
+
+This command will pull the latest image and launch the terminal UI directly inside a Docker container.
+
+
 🚫 This is a **solo project** and does **not accept collaborators**.  
 It is **publicly available** for transparency and educational sharing,  
 but all contributions and code decisions are handled by the author only.
